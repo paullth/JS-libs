@@ -93,7 +93,6 @@
         },
 
         _moveItem: function(target, x, y) {
-            console.log(target, x, y);
             var position = {
                 left: parseFloat(target.css('left')),
                 top: parseFloat(target.css('top'))
@@ -106,7 +105,6 @@
             });
         },
         changeScale: function(dZ){
-            console.log('changeScale', dZ, this.element);
             this.z = this.z + dZ;
             var scale = "scale(" + this.z + ")";
             console.log(scale);

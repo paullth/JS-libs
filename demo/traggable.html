@@ -6,10 +6,11 @@
     <title>Traggable</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/style.css">
-    <link type="text/plain" rel="author" href="/humans.txt" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+    
+    <script src="../vendor/jquery-ui/jquery-1.7.2.js"></script>
+    <script src="../vendor/jquery-ui/ui/jquery.ui.core.js"></script>
+    <script src="../vendor/jquery-ui/ui/jquery.ui.widget.js"></script>
+    <script src="../vendor/jquery-ui/ui/jquery.ui.mouse.js"></script>
     <script src="../src/jquery-ui.traggable.js"></script>
     <style>
       .items{
@@ -17,6 +18,11 @@
         height:400px;
         background-color: #AABBDD;
         position: relative;
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        transform-origin: 0 0;
       }
 
       .item{
@@ -26,6 +32,21 @@
         background-color: #DDBBAA;
       }
     </style>
+    <script type="text/javascript">
+
+      $(function(){
+          $('.items').traggable();
+          setTimeout(function(){
+            $('.items').traggable('changeScale', -0.3);
+          }, 1500);
+          setTimeout(function(){
+            $('.items').traggable('changeScale', 0.15);
+          }, 3500);
+          setTimeout(function(){
+            $('.items').traggable('changeScale', -0.5);
+          }, 6000);
+        });
+    </script>
   </head>
   <body>
     <div class="items">
