@@ -97,6 +97,12 @@
                 left: parseFloat(target.css('left')),
                 top: parseFloat(target.css('top'))
             };
+            if(isNaN(position.left)){
+                position.left = target.offset().left;
+            }
+            if(isNaN(position.top)){
+                position.top = target.offset().top;
+            }
             x = x * (1 / this.z);
             y = y * (1 / this.z);
             target.css({
